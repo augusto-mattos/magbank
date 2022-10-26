@@ -1,13 +1,14 @@
-// esse primeiro import foi acrescentado manualmente, nao foi criado automaticamente via create-react-app 
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Main from './components/Main';
 import "./App.scss";
 
 const App = () => (
     <div className="App">
       <Navbar />
       <Hero />
+      <Main />
     </div>
 );
 
