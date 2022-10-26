@@ -1,0 +1,35 @@
+@import '../variables';
+
+.credit-card-title {
+    font-size: 2.2rem;
+    color: $color-primary;
+    font-weight: 300;
+    font-family: Arimo;
+
+    border: hidden;
+
+    @media screen and (min-width: 992px) {
+        font-size: 2.5rem;
+    }
+}
+
+.fas {
+    color: $color-secondary;
+}
+
+.cardTitle {
+    font-size: 20px;
+    color: #535353;
+    font-weight: 700;
+    font-family: Arimo;
+}
+
+.cardText {
+    width: 304px;
+    height: 108px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #444444;
+    font-family: Arimo;
+    display: table-cell;
+}
