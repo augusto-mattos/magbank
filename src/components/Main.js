@@ -1,10 +1,17 @@
 import React from 'react';
 import '../components/Main.scss';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import {
+    faCreditCard,
+    faMobile,
+    faCartArrowDown,
+    faWallet,
+} from '@fortawesome/free-solid-svg-icons';
 import cartao from '../assets/cartao.png';
 import blog1 from '../assets/blog1.png';
 import blog2 from '../assets/blog2.png';
 import blog3 from '../assets/blog3.png';
+import IconText from './IconText';
 
 const Main = () => (
     <Container className='my-5'>
@@ -15,49 +22,29 @@ const Main = () => (
                 </Row>
                 <Row>
                     <Col xs={12} lg={6} className='mb-2'>
-                        <Row>
-                            <Col xs={2} className='d-flex justify content-center'>
-                                <i class="fas fa-credit-card fa-2x"></i>                                 
-                            </Col>
-                            <Col xs={10} className='h5 text-muted'>
-                                <p>Crédito pessoal</p>
-                            </Col>
-                        </Row>    
+                        <IconText icon={faCreditCard} size={2} color='#f05656' className='h5 text-muted'>
+                            Crédito pessoal
+                        </IconText>
                     </Col>
                     <Col xs={12} lg={6} className='mb-2'>
-                        <Row>
-                            <Col xs={2} className='d-flex justify content-center'>
-                                <i class="fas fa-cart-arrow-down fa-2x"></i>                                 
-                            </Col>
-                            <Col xs={10} className='h5 text-muted'>
-                                <p>Pagamentos online</p>
-                            </Col>
-                        </Row>    
+                        <IconText icon={faMobile} size={2} color='#f05656' className='h5 text-muted'>
+                            APP
+                        </IconText>
                     </Col>
                     <Col xs={12} lg={6} className='mb-2'>
-                        <Row>
-                            <Col xs={2} className='d-flex justify content-center'>
-                                <i class="fas fa-mobile fa-2x"></i>                                 
-                            </Col>
-                            <Col xs={10} className='h5 text-muted'>
-                                <p>APP</p>
-                            </Col>
-                        </Row>    
+                        <IconText icon={faCartArrowDown} size={2} color='#f05656' className='h5 text-muted'>
+                            Pagamentos online
+                        </IconText>
                     </Col>
                     <Col xs={12} lg={6} className='mb-2'>
-                        <Row>
-                            <Col xs={2} className='d-flex justify content-center'>
-                                <i class="fas fa-wallet fa-2x"></i>                                 
-                            </Col>
-                            <Col xs={10} className='h5 text-muted'>
-                                <p>Carteira digital</p>
-                            </Col>
-                        </Row>    
+                        <IconText icon={faWallet} size={2} color='#f05656' className='h5 text-muted'>
+                            Carteira digital
+                        </IconText>
                     </Col>
                 </Row>   
             </Col>
             <Col xs={12} lg={5}>
-                <img src={cartao} alt="imagem do cartao de credito" fluid />
+                <img src={cartao} alt="imagem do cartao de credito" className='creditcard' />
             </Col>
         </Row>
         <Row className='blog'>
@@ -100,7 +87,7 @@ const Main = () => (
         </Row>
         <Row className='d-flex justify-content-center'>
             <Col md={{ span: 6, offset: 4 }}>
-                <Button variant="success">Abra a sua conta</Button>
+                <Button variant='success' size='lg'>Abra a sua conta</Button>
             </Col>
         </Row>
     </Container>
