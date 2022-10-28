@@ -1,0 +1,19 @@
+.institutional {
+    background-image: url('../assets/institutional.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    &-title {
+        font-size: 2.2rem;
+        color: #fff;
+        font-weight: 300;
+        font-family: Roboto;
+    
+        border: hidden;
+    
+        @media screen and (min-width: 992px) {
+            font-size: 2.5rem;
+        }
+
+    }
+}
