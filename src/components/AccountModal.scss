@@ -1,0 +1,14 @@
+@import '../variables';
+
+.modal-title {
+    color: $color-primary;
+}
+
+button.btn-secondary {
+    border: unset;    
+}
+
+button.btn-primary {
+    background-color: $color-primary;
+    border: unset;    
+}
