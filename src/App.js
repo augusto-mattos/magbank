@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Main from './components/Main';
 import Institutional from './components/Institutional';
+import Faq from './components/Faq';
 import "./App.scss";
 
 const App = () => (
@@ -11,6 +12,7 @@ const App = () => (
       <Hero />
       <Main />
       <Institutional />
+      <Faq />
     </div>
 );
 

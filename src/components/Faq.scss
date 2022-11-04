@@ -1,0 +1,45 @@
+@import '../variables';
+
+.faq {
+    background-color: $color-faq-background;
+
+    .service-title {
+        text-align: center;
+    }
+
+    div.accordion {
+        --bs-accordion-bg: $color-faq-background;
+        --bs-accordion-border-color: unset;
+        font-family: Roboto;
+    }
+    
+    h2.accordion-header {
+        color: #fff;
+        background-color: $color-faq-header;
+    }
+    
+    button.accordion-button {
+        color: #fff;    
+    }
+    
+    button.accordion-button:not(.collapsed) {
+        color: #fff;
+        background-color: $color-faq-header;
+    }    
+
+    &-title {
+        font-size: 2.2rem;
+        color: #fff;
+        font-weight: 300;
+        font-family: Roboto;
+        text-align: center;
+    
+        @media screen and (min-width: 992px) {
+            font-size: 2.5rem;
+        }
+    }
+
+    &-clickable {
+        cursor: pointer;
+    }
+}

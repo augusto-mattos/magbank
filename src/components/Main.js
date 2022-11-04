@@ -21,23 +21,23 @@ const Main = () => (
                 <p className='credit-card-title my-5'>Cartão de crédito</p>
                 </Row>
                 <Row>
-                    <Col xs={12} lg={6} className='mb-2'>
-                        <IconText icon={faCreditCard} size={2} color='#f05656' className='h5 text-muted'>
+                    <Col xs={12} lg={6} className='mb-3'>
+                        <IconText icon={faCreditCard} size={2} color='#f05656' textClassName='h5 text-muted'>
                             Crédito pessoal
                         </IconText>
                     </Col>
-                    <Col xs={12} lg={6} className='mb-2'>
-                        <IconText icon={faMobile} size={2} color='#f05656' className='h5 text-muted'>
+                    <Col xs={12} lg={6} className='mb-3'>
+                        <IconText icon={faMobile} size={2} color='#f05656' textClassName='h5 text-muted'>
                             APP
                         </IconText>
                     </Col>
-                    <Col xs={12} lg={6} className='mb-2'>
-                        <IconText icon={faCartArrowDown} size={2} color='#f05656' className='h5 text-muted'>
+                    <Col xs={12} lg={6} className='mb-3'>
+                        <IconText icon={faCartArrowDown} size={2} color='#f05656' textClassName='h5 text-muted'>
                             Pagamentos online
                         </IconText>
                     </Col>
-                    <Col xs={12} lg={6} className='mb-2'>
-                        <IconText icon={faWallet} size={2} color='#f05656' className='h5 text-muted'>
+                    <Col xs={12} lg={6} className='mb-3'>
+                        <IconText icon={faWallet} size={2} color='#f05656' textClassName='h5 text-muted'>
                             Carteira digital
                         </IconText>
                     </Col>
