@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button, ButtonGroup, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "./Navbar.scss";
 import logo from "../assets/logo.svg";
@@ -6,13 +7,15 @@ import logo from "../assets/logo.svg";
 const Navigation = ({ handleCreateAccount }) => (
     <Navbar variant="dark" expand="lg">
         <Container>
-            <Navbar.Brand href="#">
+            <Navbar.Brand href='#home'>
+                <Link to='/'>
                 <img
                     src={logo}
                     height="30"
                     className="d-inline-block align-top"
                     alt="Magbank logo"
                     />
+                </Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
@@ -28,15 +31,9 @@ const Navigation = ({ handleCreateAccount }) => (
                 <ButtonGroup aria-label="Basic example">
                     <Button variant="outline-light">
                         <NavDropdown title="Acessar minha conta" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">
-                            Another action
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">
-                            Separated link
-                        </NavDropdown.Item>
+                            <Link to='/login'>Pessoa física</Link>
+                            <NavDropdown.Divider />
+                            <Link to='/login'>Pessoa jurídica</Link>
                         </NavDropdown>
                     </Button>
                     <Button variant="outline-light" onClick={handleCreateAccount}>Abra sua conta</Button>

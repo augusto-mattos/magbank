@@ -1,29 +1,35 @@
 import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Main from './components/Main';
-import Institutional from './components/Institutional';
-import Faq from './components/Faq';
 import Footer from './components/Footer';
 import AccountModal from './components/AccountModal';
-import "./App.scss";
+import './App.scss';
+
+import Home from './views/Home';
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
 
   return ( 
-    <div className="App">
+    <Router>
       <Navbar handleCreateAccount={() => setShowModal(true)} />
-      <Hero />
-      <Main />
-      <Institutional />
-      <Faq /> 
+
+      <Routes> 
+        <Route path='/' element={<Home handleClick={() => setShowModal(true)} />} 
+        />
+        <Route path='/login' element={<h2>Hello Router</h2>} 
+        />
+      </Routes>
+
       <Footer />
 
       <AccountModal show={showModal} handleClose={() => setShowModal(false)} />
-    </div>
+    </Router>
     );
 };
-
 
 export default App;
