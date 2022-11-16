@@ -31,9 +31,9 @@ const Navigation = ({ handleCreateAccount }) => (
                 <ButtonGroup aria-label="Basic example">
                     <Button variant="outline-light">
                         <NavDropdown title="Acessar minha conta" id="basic-nav-dropdown">
-                            <Link to='/login'>Pessoa física</Link>
+                            <Link to='/login' className='text-decoration-none text-reset'>Pessoa física</Link>
                             <NavDropdown.Divider />
-                            <Link to='/login'>Pessoa jurídica</Link>
+                            <Link to='/login' className='text-decoration-none text-reset'>Pessoa jurídica</Link>
                         </NavDropdown>
                     </Button>
                     <Button variant="outline-light" onClick={handleCreateAccount}>Abra sua conta</Button>
