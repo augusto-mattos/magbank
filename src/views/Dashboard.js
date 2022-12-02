@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Routes, Route, Link, Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle, faUser } from '@fortawesome/free-solid-svg-icons'; 
 
 import AccountBalance from '../components/AccountBalance';
-import AccountPayments from '../components/AccountPayments';
 
 import './Dashboard.scss';
 
@@ -13,7 +12,7 @@ const Dashboard = () => {
 const [activeLink, setActiveLink ] = useState(0);
 
     const links = [
-        { text: 'Minha conta', path: '/dashboard' },
+        { text: 'Minha conta', path: '/dashboard/' },
         { text: 'Pagamentos', path: '/dashboard/payments' },
         { text: 'Extrato', path: '/dashboard/history' },
     ];
@@ -73,13 +72,10 @@ const [activeLink, setActiveLink ] = useState(0);
                         </Link>    
                         ))}
                 </Col>
-                <Routes>    
-                    <Route path='/dashboard' element={<Dashboard />}>
-                        <Route path='/dashboard/payments' element={<AccountPayments />} />
-                        <Route path='/dashboard/history' element={<h2>Extrato</h2>} />
-                    </Route>               
-                </Routes>
+                <Outlet />  
+                
                 <AccountBalance data={data} />
+
             </Row>
         </Container>
     )
