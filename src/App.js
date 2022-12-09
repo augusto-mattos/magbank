@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import AccountModal from './components/AccountModal';
@@ -16,8 +12,39 @@ import AccountBalance from './components/AccountBalance';
 import AccountPayments from './components/AccountPayments';
 import AccountHistory from './components/AccountHistory';
 
+const PrivateRoute = ({ children, logged, ...rest }) => (
+  <Route 
+    {...rest}
+    render={() => 
+      logged ? (
+        children
+      ) : (
+        <Navigate 
+          to= '/login'
+        />
+      )
+    }
+  />
+);
+
 const App = () => {
   const [showModal, setShowModal] = useState(false);
+  const [name, setName] = useState();
+  const [account, setAccount] = useState();
+  const isLogged = name && account;
+
+  const fakeAuth = {
+    login(name, account, cb) {
+      setName(name);
+      setAccount (account);
+      setTimeout(cb, 100);
+    },
+    logout(cb) {
+      setName();
+      setAccount();
+      setTimeout(cb,100);
+    }
+  };
 
   const data = {
     latestBalance: [
@@ -52,8 +79,8 @@ const App = () => {
 
       <Routes> 
         <Route path='/' element={<Home handleClick={() => setShowModal(true)} />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/dashboard' element={<Dashboard />}>
+        <Route path='/login' element={<Login auth={fakeAuth}/>} />
+        <Route path='/dashboard' logged={isLogged} element={<Dashboard name={name} account={account} />}>
           <Route path='dashboard/balance' element={<AccountBalance data={data} />} />
           <Route path='/dashboard/payments' element={<AccountPayments />} />
           <Route path='/dashboard/history' element={<AccountHistory data={data} />} />

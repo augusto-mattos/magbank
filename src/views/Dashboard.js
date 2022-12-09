@@ -8,7 +8,7 @@ import AccountBalance from '../components/AccountBalance';
 
 import './Dashboard.scss';
 
-const Dashboard = () => {
+const Dashboard = ({ className = false, name, account }) => {
 const [activeLink, setActiveLink ] = useState(0);
 
     const links = [
@@ -54,8 +54,8 @@ const [activeLink, setActiveLink ] = useState(0);
                             </span>
                         </Col>
                         <Col xs={9}>
-                            <h4>Augusto Mattos</h4>
-                            <p className='text-muted'>ag: 1234 c/c: 4321-5</p>
+                            <h4>{name}</h4>
+                            <p className='text-muted'>{account}</p>
                         </Col>
                     </Row>
                     {links.map(({ text, path }, key ) => (
